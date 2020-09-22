@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Form } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Container, Form } from 'react-bootstrap';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { createUserWithEmailAndPassword, initializeLoginFramework, signInWithEmailAndPassword } from './LoginManager';
 
@@ -57,7 +57,7 @@ const Login = () => {
     }
     const handleSubmit = (e) => {
         if (newUser && user.password !==user.passwordConfirm){
-            alert("Password no match");
+            alert("Password doesn't match");
             e.preventDefault();
             
         } else
@@ -68,44 +68,34 @@ const Login = () => {
                     handleResponse(res, true);
                 })
         }
-        e.preventDefault();
-        console.log(user.passwordConfirm, user.password);
-
-    }
-
-
-    const handleSignIn = (e) => {
-        if (!newUser && user.email && user.password) {
+        if(!newUser && user.email && user.password){
             signInWithEmailAndPassword(user.email, user.password)
-                .then(res => {
-                    handleResponse(res, true);
-                })
-        }
+            .then(res => {
+              handleResponse(res, true);
+            })
+          }
         e.preventDefault();
+        
+
     }
 
 
     return (
+        <Container>
         <div>
-            {/* <form onSubmit={handleSubmit}>
-                {newUser && <input name="name" type="text" onBlur={handleBlur} placeholder="Your name" />}
-                <br />
-                <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required />
-                <br />
-                <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required />
-                <br />
-                <input type="submit" value={newUser ? 'Sign up' : 'Sign in'} />
-            </form> */}
+
             <Form onSubmit={handleSubmit}>
+                {newUser && 
                 <Form.Group>
                     <Form.Label>First Name</Form.Label>
                     <Form.Control type="text" name="firstName" onBlur={handleBlur} placeholder="First Name" required/>
-                </Form.Group>
+                </Form.Group>}
+                {newUser &&
                 <Form.Group>
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control type="text" name="lastName" onBlur={handleBlur} placeholder="Last Name" required/>
                 </Form.Group>
-
+                }
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required />
@@ -115,20 +105,27 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" className='password-int' onBlur={handleBlur} placeholder="Your Password" required />
                 </Form.Group>
+                {newUser &&
                 <Form.Group controlId="formConfirmPassword">
                     <Form.Label>Password Confirm</Form.Label>
                     <Form.Control type="password" name="passwordConfirm"  className='password-confirm' onBlur={handleBlur}  placeholder="Confirm Password"  required />
-                </Form.Group>
+                </Form.Group>}
                 <Form.Group controlId="formSubmit">
-                    
-                    <Form.Control type="submit" value="Create Account" />
+                    {newUser?
+                    <Form.Control type="submit" value="Create Account" />: <Form.Control type="submit" value="Sign In" /> }
                 </Form.Group>
+                { newUser ?
+                <p>Already have an account? <Link onClick={() => setNewUser(!newUser)}>Sign in</Link ></p>: <p>New User? <Link onClick={() => setNewUser(!newUser)}>Sign Up</Link></p>
+            }
             </Form>
+            </div>
+ 
 
 
 
 
-        </div>
+        
+        </Container>
     );
 };
 
