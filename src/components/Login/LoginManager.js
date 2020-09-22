@@ -59,13 +59,13 @@ export const handleGoogleSignIn = () => {
     });
   }
 
- export const createUserWithEmailAndPassword = (name, email, password) => {
+ export const createUserWithEmailAndPassword = (firstName, lastName, email, password) => {
     return firebase.auth().createUserWithEmailAndPassword(email, password)
     .then( res => {
       const newUserInfo = res.user;
       newUserInfo.error = '';
       newUserInfo.success = true;
-      updateUserName(name);
+      updateUserName(firstName, lastName);
       return newUserInfo;
     })
     .catch( error => {
@@ -92,11 +92,11 @@ export const handleGoogleSignIn = () => {
     });
  }
 
- const updateUserName = name =>{
+ const updateUserName = (firstName, lastName) =>{
     const user = firebase.auth().currentUser;
 
     user.updateProfile({
-      displayName: name
+      displayName: firstName + " " + lastName // ch
     }).then(function() {
       console.log('user name updated successfully')
     }).catch(function(error) {

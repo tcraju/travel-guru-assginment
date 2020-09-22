@@ -14,7 +14,8 @@ const Login = () => {
     const [newUser, setNewUser] = useState(true);
     const [user, setUser] = useState({
         isSignedIn: false,
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
         passwordConfirm: '',
@@ -62,7 +63,7 @@ const Login = () => {
         } else
         
         if (newUser && user.email && user.password) {            
-            createUserWithEmailAndPassword(user.name, user.email, user.password)
+            createUserWithEmailAndPassword(user.firstName, user.lastName, user.email, user.password)
                 .then(res => {
                     handleResponse(res, true);
                 })
@@ -98,7 +99,11 @@ const Login = () => {
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" name="name" onBlur={handleBlur} placeholder="First Name" required/>
+                    <Form.Control type="text" name="firstName" onBlur={handleBlur} placeholder="First Name" required/>
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control type="text" name="lastName" onBlur={handleBlur} placeholder="Last Name" required/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
