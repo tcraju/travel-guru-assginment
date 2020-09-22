@@ -1,0 +1,50 @@
+.booking-page{
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+.color-shed {
+    background-color: rgb(0, 0, 0, 0.6);
+    width: 100%;
+    height: 700px;
+}
+
+.place-info{
+    color: white;
+    text-align: justify;
+}
+.place-info h1{
+    text-transform: uppercase;
+    font-size: 70px;
+}
+.place-info p{
+    font-size: 20px;
+}
+
+form{
+    background-color:white;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    margin-left: 100px;
+    
+    padding: 30px
+
+}
+/* .form-group{
+    padding: 0px 20px;
+} */
+.form-group input{
+    background: #F2F2F2;
+    
+}
+.btn-primary  {
+    width: 100% ;
+    background-color:#F9A51A;
+    color: black
+}

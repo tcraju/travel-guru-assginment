@@ -1,0 +1,41 @@
+#logo-img {
+    width: 150px;
+     height: 40px;
+ }
+ .nav-link{
+     /* height: 70px; */
+     line-height: 30px;
+ 
+ }
+ .app-bar a{
+ 
+     color: #fff;
+ }
+ .login-btn{
+     width: 150px;
+     background-color: #F9A51A;
+     border-radius: 10px;
+     height: 35px;
+     border:none; 
+ }
+ 
+ #search-box {
+     border: 1px solid lightgray;
+     border-radius: 10px;
+     background-color: rgb(0,0,0,0)!important;
+     color: white!important;
+ }
+ #search-box::placeholder{
+     color: white;
+     text-align: center;
+ }
+ #search-box[type=text]:focus{
+     border: 1px solid white;
+     border-radius: 10px;
+     outline: none;
+ }
+ 
+ .app-bar-padding{
+     margin-bottom: 60px;
+ }
+ 

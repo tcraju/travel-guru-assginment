@@ -1,0 +1,17 @@
+.suit-pic img{
+    max-width: 100%;
+}
+.star{
+    color:#F9A51A;
+    height: 15px;
+}
+.suit-detail p{
+    color: gray;
+    margin-bottom: 0px;
+}
+.suit-detail span{
+    margin-right: 10px;
+}
+.suit-area{
+    margin-bottom: 30px;
+}
