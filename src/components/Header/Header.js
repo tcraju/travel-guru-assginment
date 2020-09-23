@@ -41,8 +41,8 @@ const Header = (props) => {
                         <Nav.Link href="/contact" style={{ color:`${props.color}`}}>Contact</Nav.Link>
                     </Col>
                     <Col>
-                        {loggedInUser.email ? <Nav.Link> <button className='login-btn'>Sign Out</button> </Nav.Link>
-                        :<Nav.Link href="/login"> <button className='login-btn'>Login</button> </Nav.Link>}
+                        {loggedInUser.email ? <Nav.Link> <button className='login-btn' onClick={()=> setLoggedInUser({})}>Sign Out</button> </Nav.Link>
+                        :<Nav.Link href="/login"> <button className='login-btn' >Login</button> </Nav.Link>}
                     </Col>
                 </Nav>
             </Row>
