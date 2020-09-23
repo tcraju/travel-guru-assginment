@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import ReactDatePicker from 'react-datepicker';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import fakeData from '../../fakeData/index'
 import Header from '../Header/Header';
 import './Booking.css'
@@ -11,9 +11,9 @@ const Booking = () => {
     const { id } = useParams();
 
     let bookingPlace = fakeData.find((pls) => pls.id === id);
-    if (!bookingPlace){bookingPlace= fakeData[0]}
-    // console.log(name, description);
+    if (!bookingPlace) { bookingPlace = fakeData[0] }
     const [date, setDate] = useState(new Date());
+
     const datePicker = () => {
 
         const handleCalendarClose = () => console.log("Calendar closed");
@@ -28,8 +28,8 @@ const Booking = () => {
             />
         );
     };
-    const history=useHistory()
-    const submitHandler =(e)=>{
+    const history = useHistory()
+    const submitHandler = (e) => {
         e.preventDefault()
         history.push(`/${id}/booking`)
     }
@@ -50,12 +50,12 @@ const Booking = () => {
                                 <Form.Group controlId="formGridAddress1">
                                     <Form.Label >Origin</Form.Label>
 
-                                    <Form.Control placeholder="Insert Location" required/>
+                                    <Form.Control placeholder="Insert Location" required />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridAddress2">
                                     <Form.Label>Destination</Form.Label>
-                                    <Form.Control placeholder={bookingPlace.name} required/>
+                                    <Form.Control placeholder={bookingPlace.name} required />
                                 </Form.Group>
                                 <Form.Row>
                                     <Form.Group as={Col} controlId="formGridEmail">
@@ -65,16 +65,10 @@ const Booking = () => {
 
                                     <Form.Group as={Col} controlId="formGridPassword">
                                         <Form.Label>To</Form.Label>
-                                        <Form.Control type="date" id="end" name="trip-end" onClick={() => datePicker()}/>
+                                        <Form.Control type="date" id="end" name="trip-end" onClick={() => datePicker()} />
                                     </Form.Group>
                                 </Form.Row>
-
-
-                                {/* <Link to = {`/${id}/booking`}> */}
-                                    <Button variant="primary" type="submit">
-                                        Start Booking
-                                    </Button>
-                                {/* </Link> */}
+                                <Button variant="primary" type="submit">Start Booking</Button>
                             </Form>
 
                         </Col>

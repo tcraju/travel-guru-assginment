@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Col } from 'react-bootstrap';
 import './Location.css'
@@ -7,8 +6,7 @@ import './Location.css'
 
 const Location = (props) => {
 
-    const { image, name, id, description } = props.pls
-    // console.log(props.pls);
+    const { image, name, id, description } = props.pls;
 
     const clickHandler = () => {
         const placeInfo = document.getElementById('place-info');
@@ -21,7 +19,7 @@ const Location = (props) => {
                                  </Button> 
                                  </a>`;
     }
-    
+
     return (
 
         <Col md={4} sm={4} className='single-location' key={id} onClick={() => clickHandler()}>

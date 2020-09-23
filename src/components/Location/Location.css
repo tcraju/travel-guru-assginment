@@ -1,11 +1,10 @@
 .single-location img {
     max-width: 100%;
     height: 350px;
-    border: 10px solid rgb(0, 0, 0, 0)
-
+    border: 10px solid rgba(0, 0, 0, 0)
 }
 
-.single-location h5{
+.single-location h5 {
     color: white;
     position: absolute;
     bottom: 10px;
@@ -13,32 +12,24 @@
 
 }
 
-.style-toggle {
-    border: 10px solid #F9A51A!important;
-    border-radius: 30px;
-}
-
-/* .info-padding{
-    margin-left: 36%;
-} */
-#place-info h1{
+#place-info h1 {
     margin-left: 36%
 }
-#place-info p{
-    margin-left: 36% 
-}
-#place-info button{
-    margin-left: 36% 
+
+#place-info p {
+    margin-left: 36%
 }
 
-svg{
+#place-info button {
+    margin-left: 36%
+}
+
+svg {
     width: 20px;
     height: 10px;
 }
-/* .booking-btn{
-    width: 150px;
-    background-color: #F9A51A;
-    border-radius: 10px;
-    height: 35px;
-    border:none; 
-} */
+
+.single-location:hover img {
+    border: 10px solid #F9A51A;
+    border-radius: 25px
+}

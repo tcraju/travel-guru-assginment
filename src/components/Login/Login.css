@@ -1,51 +1,50 @@
 .other-login-method {
     border: 1px solid gray;
-    
-    border-radius:  15px;
+    border-radius: 15px;
     text-align: center;
     width: 290px;
-    margin:0 auto;
+    margin: 0 auto;
     margin-bottom: 10px;
     position: relative;
     height: 30px;
 
 }
 
-
-.login-area .form-area{
+.login-area .form-area {
     border: 1px solid;
     margin-bottom: 30px;
     height: 400px;
 }
-.login-area .form-group input{
+
+.login-area .form-group input {
     border: none;
     border-bottom: 1px solid;
     background: none;
     border-radius: 0;
 }
-.form-group input::placeholder{
+
+.form-group input::placeholder {
     color: black;
     opacity: 1;
 }
-.form-group input[type='submit']{
+
+.form-group input[type='submit'] {
     border: 1px solid;
-    background-color:#F9A51A;
+    background-color: #F9A51A;
     border-radius: 20px;
 }
-.other-login-method img{
+
+.other-login-method img {
     width: 20px;
     height: 20px;
     position: absolute;
     left: 4px;
     top: 4px;
 }
+
 form {
     margin-left: 30px
 }
-
-
-
-
 
 
 .separator p {
@@ -53,17 +52,21 @@ form {
     flex-direction: row;
     width: 30%;
     margin-left: 35%;
-  }
-  .separator p:before, .separator p:after{
+}
+
+.separator p:before,
+.separator p:after {
     content: "";
     flex: 1 1;
     border-bottom: 1px solid #000;
     margin: auto;
-  }
-  .separator p:before {
+}
+
+.separator p:before {
     margin-right: 10px
-  }
-  .separator p:after {
+}
+
+.separator p:after {
     margin-left: 10px;
     margin-left: 10px
-  }
+}
