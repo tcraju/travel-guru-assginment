@@ -4,6 +4,8 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App';
 import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './LoginManager';
 import './Login.css'
+import Header from '../Header/Header';
+import logo from '../../images/logo-black.png'
 
 
 
@@ -103,7 +105,10 @@ const Login = () => {
 
 
     return (
+        <> 
+        <Header img={logo} color="black"></Header>
         <Container>
+            
             <Row className="justify-content-center container">
 
                 <Form onSubmit={handleSubmit} className='form-area'>
@@ -148,6 +153,7 @@ const Login = () => {
 
 
         </Container>
+        </>
     );
 };
 

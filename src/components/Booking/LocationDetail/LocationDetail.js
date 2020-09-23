@@ -3,7 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import fakeData from '../../../fakeData'
 import Header from '../../Header/Header';
-import './LocatonDetail.css'
+import logo from '../../../images/logo-black.png'
+import './LocationDetail.css'
 import { StarFill} from 'react-bootstrap-icons';
 
 const LocationDetail = () => {
@@ -16,7 +17,7 @@ const LocationDetail = () => {
 
     return (
         <>
-        <Header></Header>
+        <Header img={logo} color="black"></Header>
         <Container>
             
             <p> 252 stays Apr 13-17 3 guest</p>

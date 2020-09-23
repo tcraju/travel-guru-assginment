@@ -8,22 +8,9 @@ import { handleSignOut } from '../Login/LoginManager';
 
 
 
-const Header = () => {
+const Header = (props) => {
 
-    // const handleResponse = (res, redirect) => {
-    //     setUser(res);
-    //     setLoggedInUser(res);
-    //     if (redirect) {
-    //         history.replace(from);
-    //     }
-    // }
 
-    // const signOut = () => {
-    //     handleSignOut()
-    //         .then(res => {
-    //             handleResponse(res, false);
-    //         })
-    // }
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
@@ -33,25 +20,25 @@ const Header = () => {
                 <Nav>
                     <Col>
                         <Nav.Item>
-                            <Nav.Link href="/home"><img id='logo-img' src={logo} alt=""/></Nav.Link>
+                            <Nav.Link href="/home"><img id='logo-img' src={props.img || logo} alt="" /></Nav.Link>
                         </Nav.Item>
                     </Col>
                     <Col>
                         <Nav.Item>
-                            <Nav.Link><input type="text" name="" id="search-box" placeholder='Search..'/></Nav.Link>
+                            <Nav.Link><input type="text" name="" id="search-box" placeholder='Search..' style={{ color:`${props.color}`}}/></Nav.Link>
                         </Nav.Item>
                     </Col>
                     <Col>
-                        <Nav.Link href="/news"> News</Nav.Link>
+                        <Nav.Link href="/news" style={{ color:`${props.color}`}}> News</Nav.Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/destination"> Destination</Nav.Link>
+                        <Nav.Link href="/destination" style={{ color:`${props.color}`}}> Destination</Nav.Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link href="/blog" style={{ color:`${props.color}`}}>Blog</Nav.Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/contact">Contact</Nav.Link>
+                        <Nav.Link href="/contact" style={{ color:`${props.color}`}}>Contact</Nav.Link>
                     </Col>
                     <Col>
                         {loggedInUser.email ? <Nav.Link> <button className='login-btn'>Sign Out</button> </Nav.Link>
