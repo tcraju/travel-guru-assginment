@@ -4,13 +4,17 @@
  }
  .nav-link{
      /* height: 70px; */
-     line-height: 30px;
+     line-height: 40px;
  
  }
  .app-bar a{
  
      color: #fff;
+     height: 40px;
+     line-height: 40px;
+     padding: 5px ;
  }
+
  .login-btn{
      width: 150px;
      background-color: #F9A51A;
@@ -26,7 +30,7 @@
      color: white!important;
  }
  #search-box::placeholder{
-     color: white;
+     /* color: white; */
      text-align: center;
  }
  #search-box[type=text]:focus{
@@ -37,5 +41,8 @@
  
  .app-bar-padding{
      margin-bottom: 60px;
+     padding-top: 50px;
  }
- 
+ #user-name{
+     color: white
+ }

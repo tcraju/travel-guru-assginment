@@ -5,6 +5,7 @@ import './Header.css'
 import logo from '../../images/logo-white.png'
 import { UserContext } from '../../App';
 import { handleSignOut } from '../Login/LoginManager';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,31 +21,34 @@ const Header = (props) => {
                 <Nav>
                     <Col>
                         <Nav.Item>
-                            <Nav.Link href="/home"><img id='logo-img' src={props.img || logo} alt="" /></Nav.Link>
+                            <Link to="/home"><img id='logo-img' src={props.img || logo} alt="" /></Link>
                         </Nav.Item>
                     </Col>
                     <Col>
                         <Nav.Item>
-                            <Nav.Link><input type="text" name="" id="search-box" placeholder='Search..' style={{ color:`${props.color}`}}/></Nav.Link>
+                            <Link><input type="text" name="" id="search-box" placeholder='Search..' style={{ color:`${props.color}`}}/></Link>
                         </Nav.Item>
                     </Col>
                     <Col>
-                        <Nav.Link href="/news" style={{ color:`${props.color}`}}> News</Nav.Link>
+                        <Link to="/news" style={{ color:`${props.color}`}}> News</Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/destination" style={{ color:`${props.color}`}}> Destination</Nav.Link>
+                        <Link to="/destination" style={{ color:`${props.color}`}}> Destination</Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/blog" style={{ color:`${props.color}`}}>Blog</Nav.Link>
+                        <Link to="/blog" style={{ color:`${props.color}`}}>Blog</Link>
                     </Col>
                     <Col>
-                        <Nav.Link href="/contact" style={{ color:`${props.color}`}}>Contact</Nav.Link>
+                        <Link to="/contact" style={{ color:`${props.color}`}}>Contact</Link>
                     </Col>
                     <Col>
-                        {loggedInUser.email ? <Nav.Link> <button className='login-btn' onClick={()=> setLoggedInUser({})}>Sign Out</button> </Nav.Link>
-                        :<Nav.Link href="/login"> <button className='login-btn' >Login</button> </Nav.Link>}
+                        {loggedInUser.email ? <Link> <button className='login-btn' onClick={()=> setLoggedInUser({})}>Sign Out</button> </Link>
+                        :<Link to="/login"> <button className='login-btn' >Login</button> </Link>}
                     </Col>
+                  
+
                 </Nav>
+                {loggedInUser.email && <p id='user-name' style={{ color:`${props.color}`}}> {loggedInUser.name}</p>}
             </Row>
 
 

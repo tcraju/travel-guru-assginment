@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import Booking from './components/Booking/Booking';
 import NoMatch from './components/NoMatch/NoMatch';
-
-
 import LocationDetail from './components/Booking/LocationDetail/LocationDetail';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
@@ -19,32 +17,29 @@ export const UserContext = createContext()
 function App(props) {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
-    <h3>email: {loggedInUser.email}</h3>
-    <Router>
-      <Switch>
-        
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Switch>
           <Route path='/home'>
-              <Home/>
+            <Home />
           </Route>
-          <Route  path='/login'>
-              <Login/>
+          <Route path='/login'>
+            <Login />
           </Route>
           <Route exact path='/'>
-              <Home/>
+            <Home />
           </Route>
           <PrivateRoute path="/:id/booking">
-              <LocationDetail/>
+            <LocationDetail />
           </PrivateRoute>
-
-          <Route  path='/:id'>
-              <Booking/>
+          <Route path='/:id'>
+            <Booking />
           </Route>
           <Route path='*'>
-              <NoMatch/>
+            <NoMatch />
           </Route>
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
     </UserContext.Provider>
   );
 }
