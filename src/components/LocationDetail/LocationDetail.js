@@ -1,11 +1,13 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import fakeData from '../../../fakeData'
-import Header from '../../Header/Header';
-import logo from '../../../images/logo-black.png'
+import fakeData from '../../fakeData'
+// import Header from '../../Header/Header';
+import logo from '../../images/logo-black.png'
 import './LocationDetail.css'
 import { StarFill} from 'react-bootstrap-icons';
+import Header from '../Header/Header';
+import LocationMap from '../LocationMap/LocationMap';
 
 const LocationDetail = () => {
     const { id } = useParams();
@@ -61,7 +63,9 @@ const LocationDetail = () => {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={5}></Col>
+                <Col md={5}>
+                    <LocationMap></LocationMap>
+                </Col>
             </Row>
         </Container>
         </>

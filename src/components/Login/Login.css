@@ -12,12 +12,12 @@
 }
 
 
-.form-area{
+.login-area .form-area{
     border: 1px solid;
     margin-bottom: 30px;
     height: 400px;
 }
-.form-group input{
+.login-area .form-group input{
     border: none;
     border-bottom: 1px solid;
     background: none;

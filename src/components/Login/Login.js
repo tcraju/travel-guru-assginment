@@ -107,7 +107,7 @@ const Login = () => {
     return (
         <> 
         <Header img={logo} color="black"></Header>
-        <Container>
+        <Container className='login-area'>
             
             <Row className="justify-content-center container">
 

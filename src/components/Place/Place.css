@@ -6,9 +6,16 @@
     text-transform: uppercase;
 }
 .booking-btn{
-    width: 150px!important;
+    /* width: 150px!important; */
     background-color: #F9A51A;
     border-radius: 10px;
     height: 35px;
     border:none; 
+    padding: 5px 30px;
+    margin-left:225px;
+    color: black;
+}
+.booking-btn:hover{
+    color: white;
+    text-decoration: none;
 }

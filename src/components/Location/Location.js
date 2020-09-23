@@ -21,9 +21,7 @@ const Location = (props) => {
                                  </Button> 
                                  </a>`;
     }
-    // <Link to={`/booking/${place.id}`}><Button  className='booking-btn'><span id='place-1'>Booking</span> <ArrowRight/></Button></Link>
-
-
+    
     return (
 
         <Col md={4} sm={4} className='single-location' key={id} onClick={() => clickHandler()}>

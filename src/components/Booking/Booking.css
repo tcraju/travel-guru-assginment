@@ -39,9 +39,9 @@ form{
 /* .form-group{
     padding: 0px 20px;
 } */
-.form-group input{
-    background: #F2F2F2;
-    
+.booking-page .form-group input{
+    background-color: #F2F2F2 !important;
+    border-radius: 5px;
 }
 .btn-primary  {
     width: 100% ;

@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 import Booking from './components/Booking/Booking';
 import NoMatch from './components/NoMatch/NoMatch';
-import LocationDetail from './components/Booking/LocationDetail/LocationDetail';
+import LocationDetail from './components/LocationDetail/LocationDetail';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
+
 
 export const UserContext = createContext()
 
